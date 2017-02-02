@@ -1,0 +1,32 @@
+﻿@using Home.WebUI.Models
+@using Home.WebUI.HtmlHelpers
+@model GeneralListViewModel
+
+
+@{
+    ViewBag.Title = "Valkyr";
+}
+
+@foreach (var p in @Model.Generals)
+{
+    @Html.Partial("ModuleSummary", p)
+}
+
+<div class="content">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+</div>
+<script>
+    (function($){
+        $(window).on("load",function(){
+            $(".content").mCustomScrollbar({
+                axis: "x",
+                theme:"dark"
+            });
+        });
+    })(jQuery);
+</script>
+
+
+
+
+

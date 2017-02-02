@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Home.Domain.Entities.General>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Index</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-condensed table-bordered">
+            <tr class="headerTable">
+                <th class="text-right">ID</th>
+                <th>Name</th>
+                <th>DescriptionHeader</th>
+                <th>DescriptionBody</th>
+                <th>Category</th>
+                <th>Img1</th>
+                <th>Img2</th>
+                <th>Img3</th>
+                <th>Img4</th>
+                <th>Img5</th>
+                <th>Img6</th>
+                <th>video</th>
+                <th>Data</th>
+                <th class="text-center">Действия</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr class="contentTable">
+                    <td class="text-right">@item.ModuleId</td>
+                    <td>@Html.ActionLink(item.Name, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.DescriptionHeader, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.DescriptionBody, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Category, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img1, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img2, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img3, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img4, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img5, "Edit", new { item.ModuleId })</td>
+                    <td>@Html.ActionLink(item.Img6, "Edit", new { item.ModuleId })</td>
+                    <td class="text-right">@item.video</td>
+                    <td class="text-right">@item.Data</td>
+                    <td class="text-center">
+                        @using (Html.BeginForm("Delete", "Admin"))
+                        {
+                            @Html.Hidden("ModuleId", item.ModuleId)
+                            <input type="submit"
+                                   class="btn btn-default btn-xs"
+                                   value="Удалить" />
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="panel-footer">
+        @Html.ActionLink("Добавить запись", "Create", null,
+            new { @class = "btn btn-default" })
+    </div>
+</div>

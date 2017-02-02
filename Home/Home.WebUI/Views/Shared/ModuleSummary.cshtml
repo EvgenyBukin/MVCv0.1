@@ -1,0 +1,16 @@
+﻿@model Home.Domain.Entities.General
+
+<div class="well">
+    <div class="modulsLogo">
+        <span>@Model.Name</span>
+     </div>
+    <div class="modulsHeaderContent">
+        <div class="modulsHeaderTxt">
+            <span class="lead">@Model.DescriptionHeader</span>
+        </div>
+        <span class="label label-primary">Опубликовано: @Model.Data</span>
+        <a class="btn-xs-01 "href="@Url.Action("ModulePage", "General", new { item_id = Model.ModuleId })">подробние</a>
+    </div>
+    <div class="wraper"></div>
+    <img class="logoImg" src="@Model.Img1" alt="img">
+</div>

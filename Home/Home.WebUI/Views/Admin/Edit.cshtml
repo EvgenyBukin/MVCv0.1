@@ -1,0 +1,51 @@
+﻿@model Home.Domain.Entities.General
+
+
+@{
+    ViewBag.Title = "Admin panel: editing the contents";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="panel">
+    <div class="panel-heading">
+        <h2>Editing content «@Model.Name»</h2>
+    </div>
+
+    @using (Html.BeginForm("Edit", "Admin"))
+    {
+        <div class="panel-body">
+            @Html.HiddenFor(m => m.ModuleId)
+            @foreach (var property in ViewData.ModelMetadata.Properties)
+            {
+                switch (property.PropertyName) {
+                    case "ModuleId":
+                    case "Data":
+                        //***
+                        break;
+                    default:
+                        <div class="form-group">
+                            <label>@(property.DisplayName ?? property.PropertyName)</label>
+                                @if (property.PropertyName == "DescriptionHeader" || property.PropertyName == "DescriptionBody")
+                                {
+                                    @Html.TextArea(property.PropertyName, null,
+                                        new { @class = "form-control", rows = 5 })
+                                }
+                                else
+                                {
+                                    @Html.TextBox(property.PropertyName, null,
+                                        new { @class = "form-control" })
+                                }
+                                @Html.ValidationMessage(property.PropertyName)
+                        </div>
+                        break;
+                }
+            }
+        </div>
+            <div class="panel-footer">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                @Html.ActionLink("Cancel the changes and return to the list", "Index", null, new
+                   {
+                       @class = "btn btn-default"
+                   })
+            </div>
+    }
+</div>

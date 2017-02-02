@@ -1,0 +1,721 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+    background-image: url(../Content/Components/background4.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+hr
+{
+    height: 1px;
+    background: rgb(74, 139, 160);
+    border: none;
+}
+
+.navbar-brand
+{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 25px;
+    color: rgb(74, 139, 160); 
+    text-decoration: none;
+}
+
+.navbar
+{
+    display: block;
+    width: 100%;
+    height: 40px;
+    background: rgb(0, 0, 0);
+}
+
+.rov
+{
+    width: 100%;
+    height: 850px;
+    margin-top: 4px;
+}
+
+.col-xs-3
+{
+    display: inline-block;
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    margin-top: -50px;
+    padding-top: 100px;
+    background: rgba(0, 0, 0, .8);
+    vertical-align: top;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.col-xs-3_1_1
+{
+    pointer-events: none;
+    opacity: 0;
+    transition: .5s;
+    position: absolute;
+    float: right;
+    width: 5px;
+    height: 29px;
+    background: rgb(74, 139, 160);
+    margin-top: -35px;
+}
+
+.col-xs-4
+{
+    float: right;
+    margin-right: 20px;
+    width: 81.8%;
+    background: rgba(24, 24, 24, .9);
+    position: relative;
+}
+
+.col-xs-4_1
+{
+    width: 1012px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.col-xs-4_2 {
+    width: 100%;
+    height: 500px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(0, 0, 25);
+}
+
+.well
+{
+    display: inline-block;
+    width: 502px;
+    height: 290px;
+    background: rgb(74, 139, 160);
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.btn-default
+{
+    width: 196px;
+    height: 25px;
+    background: rgb(10, 11, 12);
+    margin-right: 2px;
+    padding: 2px;
+    text-decoration: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+}
+
+.btn-lg:nth-child(1)
+{
+    margin-top: 4px;
+}
+
+.btn-lg
+{
+    display: block;
+    width: 196px;
+    margin-bottom: 4px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btn-lg:hover
+{
+    transition: .5s;
+    color: rgb(74, 139, 160);
+}
+
+.btn-primary
+{
+    background: rgb(74, 139, 160);
+}
+
+.btn-lgbtn-primary
+{
+    display: block;
+    width: 196px;
+    background: rgb(74, 139, 160);
+    margin-bottom: 4px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.btnModule
+{
+    background: rgb(255, 255, 255);
+    width: 99.6%;
+    height: 55px;
+}
+
+.content .btn-default:hover
+{
+    transition: .5s;
+    background: rgb(74, 139, 160);
+}
+
+.content
+{
+    border-top: 1px dotted rgb(55, 55, 55);
+    background: rgb(0, 0, 0);
+    border-radius: 0 0 10px 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 10px;
+    margin-top: -4px;
+    margin-bottom: 5px;
+    width: 978px;
+    height: 55px;
+}
+
+.mCSB_draggerContainer
+{
+    background: rgb(255, 255, 255);
+    border-radius: 5px 5px;
+}
+
+.mCSB_scrollTools_horizontal
+{
+    margin-bottom: 5px;
+}
+
+.modulsLogo
+{
+    position: absolute;
+    width: 502px;
+    height: 60px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    color: rgb(255, 255, 255);
+    text-align: right;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 21px;
+    z-index: 10;
+}
+
+.modulsLogo span
+{
+    margin-right: 10px;
+}
+
+.modulsHeaderContent
+{
+    position: absolute;
+    width: 502px;
+    height: 150px;
+    margin-top: 140px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index: 10;
+    opacity: 0;
+}
+
+.well:hover .modulsHeaderContent
+{
+    opacity: 1;
+    transition: .9s;
+}
+
+.modulsHeaderTxt
+{
+    overflow: hidden;
+    width: 490px;
+    height: 100px;
+    line-height: 25px;
+}
+
+.modulsHeaderTxt:before {
+    content: "";
+    float: left;
+    width: 5px;
+    height: 100px;
+}
+
+.modulsHeaderTxt > *:first-child {
+    float: right;
+    width: 100%;
+    margin-left: -5px;
+}
+
+.modulsHeaderTxt:after {
+    content: "\02026";
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    box-sizing: content-box;
+    float: right;
+    position: relative;
+    top: -25px;
+    left: 100%;
+    width: 3em;
+    margin-left: -3em;
+    padding-right: 5px;
+    text-align: right;
+    background-size: 100% 100%;
+    background: linear-gradient(to bottom right, rgb(12, 12, 17), #0b0a0d 60%, #080609);
+}
+/*
+.modulsHeaderTxt span
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+*/
+.modulsHeaderContent span
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: rgb(255, 255, 255);
+}
+
+.modulsHeaderContent span:nth-child(1)
+{
+    display: block;
+    text-align: right;
+}
+
+.modulsHeaderContent span:nth-child(2)
+{
+    float: left;
+    margin-top: 24px;
+    margin-left: 15px;
+}
+
+.btn-xs-01
+{
+    transition: .9s;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    padding: 2px 15px;
+    border: 3px solid rgb(128, 128, 128);
+    -webkit-transform: scale(2);
+    transform: scale(0);
+}
+
+.btn-xs-01:hover
+{
+    color:rgb(74, 139, 160);
+    border: 3px solid rgb(74, 139, 160);
+}
+
+.logoImg
+{
+    width: 502px;
+    height: 290px;
+    pointer-events: none;
+}
+
+.wraper
+{
+    position: absolute;
+    width: 502px;
+    height: 290px;
+    opacity: 0;
+}
+
+.well:hover .wraper
+{
+    opacity: 1;
+    transition: .5s;
+    background: rgba(0, 0, 0, .8);
+}
+
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url(/Content/FontFamily/Condensed.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(/Content/FontFamily/Ubuntu.woff) format('woff');
+}
+
+.contentHeader
+{
+    color: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
+    margin-left: -10px;
+    margin-top: 10px;
+    text-align: end;
+    display: flex;
+    height: 50px;
+    width: 102%;
+}
+
+.contentHeader span
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: auto;
+    margin-right: 20px;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.contentBody
+{
+    width: 102%;
+    min-height: 400px;
+    background: rgb(255, 255, 255);
+    margin-left: -10px;
+    margin-bottom: 20px;
+}
+
+.contentBody span
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+}
+
+.contentBody01
+{
+    display: flex;
+    width: 600px;
+    height: 400px;
+    float: left;
+}
+
+.contentBody01 img
+{
+    max-height: 400px;
+    max-width: 600px;
+    margin: auto;
+    /*
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    */
+}
+
+.contentBody02
+{
+    display: flex;
+    float: right;
+    width: 432px;
+    height: 400px;
+}
+
+.contentBody02 span
+{
+    margin: auto;
+}
+
+.contentBody03
+{
+    display: inline-block;
+    background: rgb(225, 225, 225);
+}
+
+.contentBody03t
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.contentBody03t span
+{
+    width: 75%;
+    margin: auto;
+}
+
+.contentBody04
+{
+    width: 1032.22px;
+    display: inline-block;
+    background: rgb(255, 255, 255);
+}
+
+.contentBody04 img
+{
+    display: block;
+    width: 100%;
+}
+
+.contentBody04t
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.contentBody04t iframe
+{
+    margin: auto;
+}
+
+.contentBody05
+{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background: rgb(0, 0, 0);
+}
+
+.contentBody05 span
+{
+    margin: auto;
+    color: rgb(255, 255, 255);
+    margin-right: 30px;
+}
+
+/*ADMIN PANEL*/
+
+.headerTable th 
+{
+    display: inline-block;
+}
+
+.headerTable th:nth-child(1)
+{
+    overflow: hidden;
+    height: 90px;
+    min-width: 50px;
+    max-width: 75px;
+    width: auto;
+}
+
+.headerTable th:nth-child(2)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 136px;
+}
+
+.headerTable th:nth-child(3)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 140px;
+}
+
+.headerTable th:nth-child(4)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 128px;
+}
+
+.headerTable th:nth-child(5)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(6)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(7)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(8)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(9)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(10)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(11)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(12)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.headerTable th:nth-child(13)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 85px;
+}
+
+.headerTable th:nth-child(14)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 90px;
+}
+
+
+.contentTable td
+{
+    display: inline-block;
+}
+
+.contentTable td:nth-child(1)
+{
+    overflow: hidden;
+    height: 90px;
+    min-width: 50px;
+    max-width: 75px;
+    width: auto;
+}
+
+.contentTable td:nth-child(2)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 136px;
+}
+
+.contentTable td:nth-child(3)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 140px;
+}
+
+.contentTable td:nth-child(4)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 128px;
+}
+
+.contentTable td:nth-child(5)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(6)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(7)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(8)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(9)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(10)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(11)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(12)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 75px;
+}
+
+.contentTable td:nth-child(13)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 85px;
+}
+
+.contentTable td:nth-child(14)
+{
+    overflow: hidden;
+    height: 90px;
+    width: 90px;
+}
+
+.panel-footer a
+{
+    padding: 0;
+}
+
+.btn-default
+{
+    width: 196px;
+    height: 25px;
+}
+
+.btn-xs
+{
+    width: 75px;
+    height: 25px;
+}
+
+.panel-footer a
+{
+    width: auto;
+    height: 35px;
+    padding: 6px;
+}
+
+.img-thumbnail
+{
+    width: 100%;
+}

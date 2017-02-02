@@ -1,0 +1,42 @@
+﻿@using Home.WebUI.Models
+@model Home.Domain.Entities.General
+
+@{
+    //ViewBag.Title = "ModulePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+
+    var desptBd = @Model.DescriptionBody;
+    var desptHd = @Model.DescriptionHeader;
+
+}
+
+<div class="modulContent">
+    <div class="contentHeader">
+        <span>@Model.Name</span>
+    </div>
+    <div class="contentBody">
+        <div class="contentBody01">
+            <img src="@Model.Img2" alt="" />
+        </div>
+        <div class="contentBody02">
+            <span>@(new HtmlString(desptHd))</span>
+        </div>
+        <div class="contentBody03">
+            <div class="contentBody03t">
+                <span>@(new HtmlString(desptBd))</span>
+            </div>
+        </div>
+        <div class="contentBody04">
+            <img src="@Model.Img3" alt="" />
+            <div class="contentBody04t">
+                <iframe width="860" height="515" src="@Model.video" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="contentBody05">
+            <span>Опубликовано: @Model.Data</span>
+        </div>
+        </div>
+</div>
