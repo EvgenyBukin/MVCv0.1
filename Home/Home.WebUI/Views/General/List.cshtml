@@ -3,30 +3,75 @@
 @model GeneralListViewModel
 
 
+
 @{
     ViewBag.Title = "Valkyr";
 }
 
-@foreach (var p in @Model.Generals)
-{
-    @Html.Partial("ModuleSummary", p)
+@section B{
+<!--ModuleSummaryList-->
+    @foreach (var p in @Model.Generals)
+    {
+        @Html.Partial("ModuleSummary", p)
+    }
+
+    <div class="content"> <!--Scrollbar-->
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
+    </div>
+    <script>
+        (function($){
+            $(window).on("load", function(){
+                $(".content").mCustomScrollbar({
+                    axis: "x",
+                    theme:"dark"
+                });
+            });
+        })(jQuery);
+    </script>
 }
 
-<div class="content">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x, category = Model.CurrentCategory }))
-</div>
-<script>
-    (function($){
-        $(window).on("load",function(){
-            $(".content").mCustomScrollbar({
-                axis: "x",
-                theme:"dark"
-            });
-        });
-    })(jQuery);
-</script>
-
-
-
+@section C{
+    @foreach (var b in ViewBag.Articles) {
+        <div class="col-xs-4_2">
+            <div class="col-xs-4_2_1">
+                <div class="col-xs-4_2_1_1">
+                    <img class="ArticleImg1" src="@b.Img1">
+                    <div class="ArticleLogoPanel">
+                        <span class="ArticleLogoName">@b.Name</span>
+                    </div>
+                </div>
+                <div class="col-xs-4_2_1_2">
+                    <div id="comment_bubble">New</div>
+                    <div class="ArticleDescription">
+                        <span class="ArticleDescriptionTxt">@b.Description</span>
+                    </div>
+                    <a class="btn-xs-Article-01" href="@Url.Action("ModulePageArticle", "General", new { itemA_id = @b.ArticleId })">подробние</a>
+                    <!---<img class="ArticleImg2" src="">-->
+                    <div class="wraperArticle"></div>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="col-xs-4_3">
+        @foreach (var c in ViewBag.ArticlesView)
+        {
+            <div class="col-xs-4_3_1" id="View2">
+                <img class="col-xs-4_3_1_Img1" src="@c.Img3" alt="">
+                <div class="col-xs-4_3_1_txt">
+                    <span>@c.Name</span>
+                </div>
+                <div class="VievButton">
+                    <div class="infView">
+                        <span>Опубликовано: @c.Data</span>
+                        <span>Автор: @c.Author</span>
+                    </div>
+                    <a class="btn-xs-Article-02" href="@Url.Action("ModulePageArticle", "General", new { itemA_id = @c.ArticleId })">
+                        <img src="~/Content/Components/ModuleLink.png" alt="">
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+}
 
 

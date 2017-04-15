@@ -2,10 +2,10 @@
 @model Home.Domain.Entities.General
 
 @{
-    //ViewBag.Title = "ModulePage";
+    ViewBag.Title = "Valkyr";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section B{
 @{
 
     var desptBd = @Model.DescriptionBody;
@@ -40,3 +40,7 @@
         </div>
         </div>
 </div>
+}
+
+@section C{
+}

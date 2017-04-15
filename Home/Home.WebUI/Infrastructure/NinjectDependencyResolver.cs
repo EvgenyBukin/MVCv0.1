@@ -30,6 +30,7 @@ namespace Home.WebUI.Infrastructure
         private void AddBindings()
         {
             kernel.Bind<IGeneralRepository>().To<EFGeneralRepository>();
+            kernel.Bind<IArticleRepository>().To<EFArticleRepository>();
         }
     }
 }

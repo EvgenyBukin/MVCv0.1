@@ -1,0 +1,35 @@
+﻿@model Home.Domain.Entities.Article
+
+@{
+    ViewBag.Title = "Valkyr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section C{
+@{
+    var desptBd = @Model.Description;
+    var TxtBd = Model.ArticleTxt;
+}
+<div class="modulContent">
+    <div class="contentHeader">
+        <span>@Model.Name</span>
+    </div>
+    <div class="contentBody">
+        <div class="contentBodyArticle01">
+            <iframe width="757" height="425" src="@Model.Img2" frameborder="0" allowfullscreen id="videoArticle"></iframe>
+        </div>
+        <div class="contentBodyArticle02">
+            <span>@Model.Description</span>
+        </div>
+        <div class="contentBodyArticle03">
+            <hr>
+            <span>@(new HtmlString(TxtBd))</span>
+        </div>
+        <button class="moduleSize" id="positionOne"><img id="modulSizeImg" src="~/Content/Components/ModuleSize1.png"></button>
+            <div class="contentBody05">
+                <span>Опубликовано: @Model.Data</span>
+            </div>
+        </div>
+</div>
+}
+
+@section B{}

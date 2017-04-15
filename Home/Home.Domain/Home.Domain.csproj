@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Abstract\IArticleRepository.cs" />
     <Compile Include="Abstract\IGeneralRepository.cs" />
+    <Compile Include="Concrete\EFArticleRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFGeneralRepository.cs" />
     <Compile Include="Entities\Article.cs" />

@@ -16,6 +16,8 @@ namespace Home.Domain.Entities
 
         public string Description { get; set; }
 
+        public string ArticleTxt { get; set; }
+
         public string Img1 { get; set; }
 
         public string Img2 { get; set; }
@@ -23,5 +25,7 @@ namespace Home.Domain.Entities
         public string Data { get; set; }
 
         public string Author { get; set; }
+
+        public string Img3 { get; set; }
     }
 }

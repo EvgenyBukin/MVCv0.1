@@ -35,8 +35,17 @@ hr
 .rov
 {
     width: 100%;
-    height: 850px;
     margin-top: 4px;
+    display: inline-block;
+    min-height: 768px;
+}
+
+#logo1
+{
+    height: 45px;
+    width: 45px;
+    z-index: 1;
+    position: absolute;
 }
 
 .col-xs-3
@@ -72,6 +81,7 @@ hr
     width: 81.8%;
     background: rgba(24, 24, 24, .9);
     position: relative;
+    margin-bottom: 5px;
 }
 
 .col-xs-4_1
@@ -84,11 +94,133 @@ hr
 
 .col-xs-4_2 {
     width: 100%;
-    height: 500px;
+    height: 400px;
     margin-top: 4px;
+    margin-bottom: 4px;
     margin-left: auto;
     margin-right: auto;
-    background: rgb(0, 0, 25);
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+}
+
+.col-xs-4_2_1
+{
+    width: 975px;
+    height: 360px;
+    background: rgb(255, 255, 255);
+    margin: auto;
+    display: flex;
+}
+
+.col-xs-4_2_1_1
+{
+    display: inline-block;
+    width: 700px;
+    height: 360px;
+    background: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.ArticleImg1
+{
+    transition-duration: 1s;
+    width: 700px;
+    height: 360px;
+    pointer-events: none;
+    display: block;
+}
+
+.ArticleDescription {
+    width: 230px;
+    height: 360px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ArticleDescriptionTxt
+{
+    height: 245px;
+    display: block;
+    padding: 20px;
+    border: 2px solid rgb(128, 128, 128);
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 17px;
+    text-overflow: ellipsis
+}
+
+.wraperArticle
+{
+    width: 275px;
+    height: 360px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 97%, rgba(0, 0, 0, 1));
+    position: relative;
+    top: -416px;
+}
+
+#comment_bubble {
+    margin-top: 6px;
+    margin-right: 6px;
+    width: 40px;
+    height: 18px;
+    background: rgb(74, 139, 160);
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    float: right;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+#comment_bubble:before {
+    content: "";
+    width: 0;
+    height: 0;
+    right: 36px;
+    top: 4px;
+    position: absolute;
+    border-top: 4px solid transparent;
+    border-right: 16px solid rgb(74, 139, 160);
+    border-bottom: 4px solid transparent;
+}
+
+.btn-xs-Article-01
+{
+    transition-duration: 1s;
+    width: 216px;
+    position: relative;
+    top: -60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgb(128, 128, 128);
+    padding: 5px;
+    text-align: center;
+    z-index: 1;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.btn-xs-Article-01:hover
+{
+    transition-duration: 1s;
+    border: 2px solid rgb(74, 139, 160);
+    color: rgb(74, 139, 160);
+}
+
+.col-xs-4_2_1_2
+{
+    display: inline-block;
+    width: 275px;
+    height: 360px;
+    background: rgb(49, 54, 60);
+    overflow: hidden;
 }
 
 .well
@@ -206,6 +338,9 @@ hr
 
 .modulsLogo span
 {
+    display: block;
+    width: 390px;
+    float: right;
     margin-right: 10px;
 }
 
@@ -691,6 +826,25 @@ hr
     width: 90px;
 }
 
+.ArticleLogoPanel
+{
+    width: 100%;
+    height: 50px;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    position: relative;
+    top: -364px;
+}
+
+.ArticleLogoName
+{
+    float: right;
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+    text-align: right;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 21px;
+}
+
 .panel-footer a
 {
     padding: 0;
@@ -718,4 +872,230 @@ hr
 .img-thumbnail
 {
     width: 100%;
+}
+
+.footer 
+{
+    width: 100%;
+    height: 100px;
+    background: rgb(0, 0, 0);
+
+}
+
+.contentBodyArticle01
+{
+    display: flex;
+    width: 757px;
+    height: 425px;
+    float: left;
+}
+
+.contentBodyArticle01 iframe
+{
+    margin: auto;
+}
+
+.contentBodyArticle02
+{
+    display: flex;
+    width: 275px;
+    height: 425px;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.contentBodyArticle02 span
+{
+    padding: 10px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+}
+
+.moduleSize
+{
+    position: absolute;
+    display: block;
+    width: 274px;
+    height: 45px;
+    top: 440px;
+    border: none;
+    cursor: pointer;
+    margin-left: 758px;
+    outline: none;
+}
+
+.moduleSize img
+{
+    width: 35px;
+    height: 35px;
+    pointer-events: none;
+    transform: rotate(0deg);
+}
+
+.contentBodyArticle03
+{
+    width: 100%;
+    display: inline-block;
+}
+
+.contentBodyArticle03 span
+{
+    padding: 50px;
+    display: block;
+}
+
+.contentBodyArticle03 img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 927px;
+}
+
+.col-xs-4_3
+{
+    width: 100%;
+    height: 672px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.col-xs-4_3_1
+{
+    margin-top: 5px;
+    display: inline-block;
+    width: 250px;
+    height: 327px;
+    background: rgb(255, 255, 255);
+    position: relative;
+    overflow: hidden;
+}
+
+.col-xs-4_3_1 span
+{
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.col-xs-4_3_1_txt
+{
+    transition-duration: 1s;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 1));
+    text-align: center;
+}
+
+.col-xs-4_3_1 img
+{
+    display: block;
+    width: 100%;
+}
+
+.VievButton
+{
+    transition-duration: 1s;
+    width: 100%;
+    height: 0px;
+    background: rgb(0, 0, 0);
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+
+.VievButton a
+{
+    float: right;
+    font-weight: 500;
+    display: block;
+    margin-top: 5px;
+    margin-right: 2px;
+}
+
+.VievButton img
+{
+    transition-duration: 1s;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgb(128, 128, 128);
+    padding: 2px;
+    border-radius: 40px;
+}
+
+.VievButton img:hover
+{
+    transition-duration: 1s;
+    border: 3px solid rgb(74, 139, 160);
+}
+
+.infView span
+{
+    position: absolute;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.infView span:nth-child(1)
+{
+    margin-left: 5px;
+}
+
+.infView span:nth-child(2)
+{
+    margin-top: 25px;
+    margin-left: 5px;
+
+}
+
+.col-xs-4_3_1:hover .VievButton
+{
+    transition-duration: 1s;
+    height: 50px;
+}
+
+.col-xs-4_3_1:hover .col-xs-4_3_1_txt
+{
+    transition-duration: 1s;
+    bottom: 50px;
+}
+
+.infView
+{
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+.col-xs-4_3_1:hover .infView
+{
+    transition-duration: 2s;
+    opacity: 1;
+}
+
+.btn-xs-Article-02
+{
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+.col-xs-4_3_1:hover .btn-xs-Article-02
+{
+    transition-duration: 2s;
+    opacity: 1;
+}
+
+.col-xs-4_3_1_Img1
+{
+    top: 0px;
+    display: block;
+    position: relative;
+}
+
+.wellCatigory
+{
+    font-family: 'Open Sans Condensed', sans-serif;
+    pointer-events: none;
 }
