@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Home.WebUI.Controllers
 {
@@ -12,10 +13,60 @@ namespace Home.WebUI.Controllers
     {
         IGeneralRepository repository;
 
-        public AdminController (IGeneralRepository repo)
+        IArticleRepository repositoryA;
+
+        public AdminController (IGeneralRepository repo, IArticleRepository repoA)
         {
             repository = repo;
+
+            repositoryA = repoA;
         }
+
+        /***************************New****************************/
+        public ViewResult IndexA()
+        {
+            return View(repositoryA.Articles);
+        }
+
+        public ViewResult EditA(int articleId)
+        {
+            Article article = repositoryA.Articles
+                .FirstOrDefault(b => b.ArticleId == articleId);
+            return View(article);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult EditA(Article article)
+        {
+            if (ModelState.IsValid)
+            {
+                repositoryA.SaveArticle(article);
+                TempData["message"] = string.Format("Измменения \"{0}\" были сохранены", article.Name);
+                return RedirectToAction("IndexA");
+            } else {
+                return View(article);
+            }
+        }
+
+        public ViewResult CreateA()
+        {
+            return View("EditA", new Article());
+        }
+
+        [HttpPost]
+        public ActionResult DeleteA(int articleId)
+        {
+            Article deletedArticle = repositoryA.DeleteArticle(articleId);
+            if(deletedArticle != null)
+            {
+                TempData["message"] = string.Format("Запись \"{0}\" была удалена",
+                    deletedArticle.Name);
+            }
+            return RedirectToAction("IndexA");
+        }
+
+        /**********************************************************/
 
         public ViewResult Index()
         {

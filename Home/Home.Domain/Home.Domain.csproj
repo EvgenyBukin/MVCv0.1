@@ -78,11 +78,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IArticleRepository.cs" />
+    <Compile Include="Abstract\ICommentRepository.cs" />
     <Compile Include="Abstract\IGeneralRepository.cs" />
     <Compile Include="Concrete\EFArticleRepository.cs" />
+    <Compile Include="Concrete\EFCommetRepository.cs" />
     <Compile Include="Concrete\EFDbContext.cs" />
     <Compile Include="Concrete\EFGeneralRepository.cs" />
     <Compile Include="Entities\Article.cs" />
+    <Compile Include="Entities\Comment.cs" />
     <Compile Include="Entities\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

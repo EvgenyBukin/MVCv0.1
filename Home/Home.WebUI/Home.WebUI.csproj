@@ -211,6 +211,8 @@
     <Content Include="Views\General\ModulePage.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\General\ModulePageArticle.cshtml" />
+    <Content Include="Views\Admin\IndexA.cshtml" />
+    <Content Include="Views\Admin\EditA.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

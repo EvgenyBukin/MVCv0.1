@@ -19,6 +19,7 @@ namespace Home.WebUI.Controllers
         /*===============================================================*/
 
         public int pageSize = 4;
+        public int pageSizeA = 8;
 
         public GeneralController(IGeneralRepository repo, IArticleRepository repoA)
         {
@@ -35,7 +36,8 @@ namespace Home.WebUI.Controllers
             ViewBag.Articles = repositoryA.Articles.Skip(lastEntry - 1);
             ViewBag.ArticlesView = repositoryB.Articles
                 .OrderByDescending(u => u.ArticleId)
-                .Skip(lastEntry - 8);
+                .Skip(lastEntry - (lastEntry - 1))
+                .Take(pageSizeA);
 
             GeneralListViewModel model = new GeneralListViewModel
             {
