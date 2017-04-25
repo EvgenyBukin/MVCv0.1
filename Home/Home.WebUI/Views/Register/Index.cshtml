@@ -1,0 +1,34 @@
+﻿@using System.Collections.Generic
+@model Dictionary<string, object>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RegisterForm.cshtml";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Данные пользователей</div>
+    <table class="table table-striped">
+        @foreach (string key in Model.Keys)
+        {
+            <tr>
+                <th>@key</th>
+                <td>@Model[key]</td>
+            </tr>
+        }
+    </table>
+</div>
+@Html.ActionLink("Выйти", "List", "General", null, new { @class = "btn btn-primary" })
+@Html.RouteLink("Главная страница", new
+{
+    controller = "General",
+    action = "List",
+}, new { @class = "btn btn-primary" })
+
+@section B{
+}
+
+@section C{
+}
+
+

@@ -1,8 +1,8 @@
 ﻿using Home.Domain.Abstract;
-using Home.Domain.Concrete;
-using Home.Domain.Entities;
 using Home.WebUI.Models;
+using Microsoft.Owin.Security;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Home.WebUI.Controllers
@@ -56,6 +56,10 @@ namespace Home.WebUI.Controllers
                 },
                 CurrentCategory = category
             };
+
+            ViewBag.UserName = User.Identity.Name;
+
+
             return View(model);
         }
 
@@ -69,6 +73,21 @@ namespace Home.WebUI.Controllers
         {
             var ItemA = repositoryA.Articles.FirstOrDefault(x => x.ArticleId == itemA_id);
             return View(ItemA);
+        }
+
+        [Authorize]
+        public ActionResult Logout()
+        {
+            AuthManager.SignOut();
+            return null;
+        }
+
+        private IAuthenticationManager AuthManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
+            }
         }
     }
 }

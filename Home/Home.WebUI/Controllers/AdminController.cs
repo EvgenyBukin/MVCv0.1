@@ -9,6 +9,7 @@ using System.Web.Routing;
 
 namespace Home.WebUI.Controllers
 {
+    [Authorize(Roles = "Admin, Moderators")]
     public class AdminController : Controller
     {
         IGeneralRepository repository;

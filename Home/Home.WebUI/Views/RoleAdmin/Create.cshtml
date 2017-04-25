@@ -1,0 +1,24 @@
+﻿@model string
+
+@{
+    ViewBag.Title = "Create role";
+    Layout = "~/Views/Shared/_RegisterForm.cshtml";
+}
+
+<h2>Создать роль</h2>
+@Html.ValidationSummary(false)
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Название</label>
+        <input name="name" value="@Model" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+    @Html.ActionLink("Отмена", "Index", null, new { @class = "btn btn-default" })
+}
+
+@section B{
+}
+
+@section C{
+}

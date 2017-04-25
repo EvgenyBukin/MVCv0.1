@@ -15,6 +15,62 @@
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <img id="logo1" src="~/Content/Components/Logo.png" alt="">
+        @if (Request.IsAuthenticated)
+        {
+            @Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "btn-primaryLogOut" })
+            <span class='LogUser'>@ViewBag.UserName</span>
+
+            bool resultA = User.IsInRole("Admin");
+            bool resultM = User.IsInRole("Moderators");
+
+            if (resultA)
+            {
+                @Html.RouteLink("Пользователь", new
+                {
+                    controller = "Register",
+                    action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+
+                @Html.RouteLink("Управление контентом", new
+                {
+                     controller = "Admin",
+                     action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+
+                @Html.RouteLink("Упровление пользователями", new
+                {
+                    controller = "AdminReg",
+                    action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+
+                @Html.RouteLink("Упровление ролями", new
+                {
+                    controller = "RoleAdmin",
+                    action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+            }
+
+            if (resultM)
+            {
+                @Html.RouteLink("Пользователь", new
+                {
+                    controller = "Register",
+                    action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+
+                @Html.RouteLink("Управление контентом", new
+                {
+                    controller = "Admin",
+                    action = "Index",
+                }, new { @class = "btn-primaryUsers" })
+            }
+
+        }
+        else
+        {
+            @Html.ActionLink("Войти", "Login", "Account", null, new { @class = "btn-primaryLogIn" })
+            @Html.ActionLink("Регистрация", "Create", "AdminReg", null, new { @class = "btn-primaryReg" })
+        }
     </div>
     <div class="rov panel">
         <div id="categories" class="col-xs-3">
