@@ -11,12 +11,8 @@ namespace Home.WebUI.Controllers
     {
 
         private IGeneralRepository repository;
-
-        /*===============================================================*/
         private IArticleRepository repositoryA;
-
         private IArticleRepository repositoryB;
-        /*===============================================================*/
 
         public int pageSize = 4;
         public int pageSizeA = 8;
@@ -28,6 +24,7 @@ namespace Home.WebUI.Controllers
             repositoryA = repoA;
 
             repositoryB = repoA;
+
         }
 
         public ViewResult List(string category, int page = 1)
@@ -43,7 +40,7 @@ namespace Home.WebUI.Controllers
             {
                 Generals = repository.Generals
                     .Where(p => category == null || p.Category == category)
-                    .OrderBy(l => l.ModuleId)
+                    .OrderByDescending(l => l.ModuleId)
                     .Skip((page - 1) * pageSize)
                     .Take(pageSize),
                 PagingInfo = new PagingInfo
@@ -56,9 +53,6 @@ namespace Home.WebUI.Controllers
                 },
                 CurrentCategory = category
             };
-
-            ViewBag.UserName = User.Identity.Name;
-
 
             return View(model);
         }
@@ -73,6 +67,39 @@ namespace Home.WebUI.Controllers
         {
             var ItemA = repositoryA.Articles.FirstOrDefault(x => x.ArticleId == itemA_id);
             return View(ItemA);
+        }
+
+        public ActionResult Inform()
+        {
+            return View();
+        }
+
+        public ActionResult ArchiveReviews(int page = 1)
+        {
+            GeneralListViewModel model = new GeneralListViewModel
+            {
+                Articles = repositoryA.Articles
+                    .OrderByDescending(l => l.ArticleId)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = repositoryA.Articles.Count()
+                }
+            };
+            return View(model);
+        }
+
+        public ActionResult Advertising()
+        {
+            return View();
+        }
+
+        public ActionResult Сontacts()
+        {
+            return View();
         }
 
         [Authorize]

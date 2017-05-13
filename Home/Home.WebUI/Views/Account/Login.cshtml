@@ -4,7 +4,8 @@
     ViewBag.Title = "Авторизация на сайте";
     Layout = "~/Views/Shared/_RegisterForm.cshtml";
 }
-
+<div class="bg">
+<div class="mg1">
 <h2>Войти</h2>
 
 @Html.ValidationSummary()
@@ -13,20 +14,20 @@
 {
     @Html.AntiForgeryToken();
     <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-    <div class="form-group">
+    <div class="form-group bg1">
         <label>Имя</label>
-        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control v3" })
     </div>
-    <div class="form-group">
+    <div class="form-group bg1">
         <label>Пароль</label>
-        @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+        @Html.PasswordFor(x => x.Password, new { @class = "form-control v3" })
     </div>
-    <button class="btn btn-primary" type="submit">Войти</button>
+    <button class="btn btn-primary btnStyle" type="submit">Войти</button>
     @Html.RouteLink("Главная страница", new
     {
         controller = "General",
         action = "List",
-    }, new { @class = "btn btn-primary" })
+    }, new { @class = "btn btn-primary btnStyle" })
 }
 
 @section B{
@@ -34,4 +35,5 @@
 
 @section C{
 }
-
+</div>
+</div>

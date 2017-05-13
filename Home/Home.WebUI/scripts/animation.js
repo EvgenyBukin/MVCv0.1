@@ -150,7 +150,12 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.col-xs-4_3_1').mouseover(function () {
-        $(this).find('.col-xs-4_3_1_Img1').css({ '-webkit-transform': 'scale(1.1);', '-ms-ransform': 'scale(1.1);', 'transform': 'scale(1.1);', 'transition-duration': '1s' });
+        $(this).find('.col-xs-4_3_1_Img1').css({
+            '-webkit-transform': 'scale(1.1);',
+            '-ms-ransform': 'scale(1.1);',
+            'transform': 'scale(1.1);',
+            'transition-duration': '1s'
+        });
     })
 
     $('.col-xs-4_3_1').mouseout(function () {
@@ -174,4 +179,18 @@ $(document).ready(function () {
     })
 });
 
+$(document).ready(function () {
+    if ($('.col-xs-4_1').find('img').attr('src') == null) {
+        $('[src="null"]').css({ 'display': 'none' });
+    } else {
+        $('.col-xs-4_1').find('img').css({ 'display': 'block' });
+    }
+});
+
+
+$(document).ready(function () {
+    $("#Data").focus(function () {
+        $('#Data #inner-editor').append("ds");
+    })
+});
 

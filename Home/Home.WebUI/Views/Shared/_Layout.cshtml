@@ -6,6 +6,7 @@
     <link href="~/Content/StyleSheet.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=cyrillic-ext" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link rel="shortcut icon" href="~/Content/Components/favicon.ico" type="image/x-icon">
     <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
     <link rel="stylesheet" href="~/Content/jquery.mCustomScrollbar.min.css" />
     <script src="~/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
@@ -15,10 +16,13 @@
 <body>
     <div class="navbar navbar-inverse" role="navigation">
         <img id="logo1" src="~/Content/Components/Logo.png" alt="">
+        @{ 
+            var userName = User.Identity.Name;
+        }
         @if (Request.IsAuthenticated)
         {
             @Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "btn-primaryLogOut" })
-            <span class='LogUser'>@ViewBag.UserName</span>
+            <span class='LogUser'>@userName</span>
 
             bool resultA = User.IsInRole("Admin");
             bool resultM = User.IsInRole("Moderators");
@@ -86,6 +90,22 @@
             </div>  
         </div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <div class="footer-inform">
+            @Html.ActionLink("Информация", "Inform", "General", null, new { @class = "btn-primaryInf" })
+            @Html.ActionLink("Обзоры", "ArchiveReviews", "General", null, new { @class = "btn-primaryInf" })
+            @Html.ActionLink("Реклама", "Advertising", "General", null, new { @class = "btn-primaryInf" })
+            @Html.ActionLink("Контакты", "Сontacts", "General", null, new { @class = "btn-primaryInf" })
+        </div>
+        <div class="contacts">
+            <a id="vk" href="https://vk.com"></a>
+            <a id="googl" href="https://plus.google.com"></a>
+            <a id="fb" href="https://www.facebook.com"></a>
+            <a id="ynd" href="https://www.yandex.ru/"></a>
+        </div>
+        <div class="infF">
+            <span>Данный проект, может использовать только главный администратор</span>
+        </div>
+    </div>
 </body>
 </html>

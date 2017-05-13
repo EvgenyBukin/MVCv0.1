@@ -52,6 +52,6 @@ namespace Home.Domain.Entities
         public string video { get; set; }
 
         [HiddenInput(DisplayValue = false)]
-        public DateTime Data { get; set; }
+        public string Data { get; set; }
     }
 }

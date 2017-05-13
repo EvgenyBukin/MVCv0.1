@@ -1,0 +1,45 @@
+﻿@using Home.WebUI.Models
+@using Home.WebUI.HtmlHelpers
+@model GeneralListViewModel
+
+@{
+    ViewBag.Title = "Архив обзоров";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section B{
+    <span class="archLog">Архив: Обзоры</span>
+
+    @foreach (var b in Model.Articles)
+    {
+        <div class="genModuleAr">
+            <div class="genModuleArHed"><span>@b.Name</span></div>
+            <div class="genModuleArInf">
+                <span>Опубликовано: @b.Data</span>
+                <span>Автор: @b.Author</span>
+            </div>
+            <div class="genModuleArDes"><span>@b.Description</span></div>
+            <div class="genModuleArNav">
+                <a class="btn-xs-Article-Archive" href="@Url.Action("ModulePageArticle", "General", new { itemA_id = @b.ArticleId })">подробние</a>
+            </div>
+            <hr>
+        </div>
+    }
+}
+
+@section C{
+<div class="content v1">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("ArchiveReviews", new { page = x }))
+</div>
+<script>
+        (function($){
+            $(window).on("load", function(){
+                $(".content").mCustomScrollbar({
+                    axis: "x",
+                    theme:"dark"
+                });
+            });
+        })(jQuery);
+</script>
+}
+

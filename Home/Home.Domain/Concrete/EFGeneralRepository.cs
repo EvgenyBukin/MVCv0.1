@@ -33,6 +33,7 @@ namespace Home.Domain.Concrete
                     dbEntry.Img5 = general.Img5;
                     dbEntry.Img6 = general.Img6;
                     dbEntry.video = general.video;
+                    dbEntry.Data = general.Data;
                 }
             }
             context.SaveChanges();
